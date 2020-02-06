@@ -39,6 +39,15 @@ class Footer extends Component {
                         </div>
                     </div>
                     <img src={group5} className="group5" alt=""></img>
+                    <div className="group6">
+                        <div className="liltext">
+                            <p>Дополнительно</p>
+                        </div>
+                        <div className="text">
+                            <p>Часто задаваемые вопросы</p>
+                            <p>Покупка/возврат билетов</p>
+                        </div>
+                    </div>
 
                 </div>
             </FooterComponent>
@@ -117,5 +126,12 @@ const FooterComponent = styled.div`
     height: 100px;
     left: 1023px;
     top: 57px;
+}
+.group6{
+    position: absolute;
+    width: 217px;
+    height: 94px;
+    left: 1023px;
+    top: 200px;
 }
 `;

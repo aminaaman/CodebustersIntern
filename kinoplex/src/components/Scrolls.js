@@ -146,16 +146,63 @@ class Scrolls extends Component {
                 </div>
                 <div className="news">
                     <p className="todayText">Новости Kinopark</p>
+                    <br></br>
                     <p className="lilText">Читать все новости</p>
-                    <div className="poster2">
-                        <img src={image16} className="images" alt=""></img>
+                    <div class="news-row">
+                        <div class="news-info">
+                            <div class="news-info__img">
+                                <img src={image16} className="images" alt=""></img>
+                            </div>
+                            <div class="news-info__wrapper">
+                                <p class="news-info__date">
+                                    9 августа, 2019 г.
+                                </p>
+                                <h3 class="news-info__title">
+                                    «Кино Ночь» в стиле MIAMI в <br></br>
+                                    Kinopark 5 Atakent
+                                </h3>
+                                <p class="news-info__text">
+                                    17 августа приходите одетыми в стиле MIAMI и получите бесплатный комбо на...
+                                </p>
+                        </div>
                     </div>
-                    <div className="poster2">
-                        <img src={image17} className="images" alt=""></img>
+                    <div class="news-info">
+                        <div class="news-info__img">
+                            <img src={image17} className="images" alt=""></img>
+                        </div>
+                        <div class="news-info__wrapper">
+                            <p class="news-info__date">
+                                1 августа, 2019 г.
+                            </p>
+                            <h3 class="news-info__title">
+                                Семейный Фестиваль в <br></br>
+                                Kinoplexx Sary Arka
+                            </h3>
+                            <p class="news-info__text">
+                                Дорогие Алматинцы, приглашаем вас на Семейный Фестиваль в ресторане Plov&...
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias delectus totam quam optio. Incidunt cupiditate reiciendis dolor laborum quos consequatur exercitationem id ad, culpa obcaecati natus dolorum iure quasi saepe.
+                            </p>
+                        </div>
                     </div>
-                    <div className="poster2">
-                        <img src={image18} className="images" alt=""></img>
-                    </div>  
+                    <div class="news-info">
+                        <div class="news-info__img">
+                            <img src={image18} className="images" alt=""></img>
+                        </div>
+                        <div class="news-info__wrapper">
+                            <p class="news-info__date">
+                                29 июля, 2019 г.
+                            </p>
+                            <h3 class="news-info__title">
+                                Kinopark объявляет финальные скидки
+                            </h3>
+                            <p class="news-info__text">
+                                Крупнейшая кинотеатральная компания <br></br>
+                                Казахстана устраивает небывалую распр...
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci earum quaerat nesciunt exercitationem. Illo doloremque veritatis fuga quaerat nostrum, eaque velit beatae sequi possimus, magni vero rerum architecto repellat expedita.
+                            </p>
+                        </div>
+                    </div>
+                    </div>
                 </div>
 
                 
@@ -182,7 +229,7 @@ const ScrollComponent = styled.div`
     width: 1136px;
     height: 400px;
     left: 100px;
-    top: 80px;
+    top: 100px;
 }
 .todayText{
     position: absolute;
@@ -280,8 +327,53 @@ const ScrollComponent = styled.div`
     vertical-align: top;
     display: inline-block;
     padding: 20px;
-    height: 503px;
+    width: 304px;
+    height: 430px;
     left: 100px;
     
+}
+
+.news-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.news-info {
+    width: 304px;
+    position: relative;
+    border-radius: 3px;
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 22px;
+    color: #4E4E4E;
+}
+.news-info__img img {
+    width: 100%;
+}
+.news-info__wrapper{
+    position: absolute;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    bottom: 0px;
+    left: 0px;
+}
+.news-info__text{
+    margin-bottom: 0;
+    max-height: 44px;
+    max-width: 272px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+.news-info__date{
+    margin-bottom: 8px;
+}
+.news-info__title{
+    font-weight: bold;
+    font-size: 16px;
+    color: #0E0E0E;
+    margin-bottom: 8px;
 }
 `;

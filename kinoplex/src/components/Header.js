@@ -6,26 +6,26 @@ import styled from 'styled-components'
 class Header extends Component {
     render() {
         return (
-            <HeaderComponent className="header-container">
+            <HeaderComponent className="header-block">
                 <img src={logo} className="logo" alt="" />
                 <div className="rectangle">
                     <p className="cityText">Алматы</p>
                 </div>
                 <div className="navigation">
-                    <div className="navigationText">
-                        <a href="#home" className="navigationText">Расписание</a>
-                        <a href="#link" className="navigationText">Скоро</a>
-                        <a href="#link" className="navigationText">Еда и напитки</a>
-                        <a href="#link" className="navigationText">Мой Kinopark</a>
-                    </div>
-                    <div className="login">
-                        <a href="#link" className="navigationText">Вход/Регистрация</a>
-                    </div>
-                    <div className="lang">
-                        <a href="#link" className="navigationText">Рус</a>
-                    </div>
-                    <div className="triangle"></div>
-
+                    <ul className="header-block__nav header-block-first-nav">
+                        <li><a href="#home" className="header-block__link">Расписание</a></li>
+                        <li><a href="#link" className="header-block__link">Скоро</a></li>
+                        <li><a href="#link" className="header-block__link">Еда и напитки</a></li>
+                        <li><a href="#link" className="header-block__link">Мой Kinopark</a></li>
+                    </ul>
+                    <ul class="header-block__nav">
+                        <li>
+                            <a href="#link" class="header-block__link">Вход / Регистрация</a>
+                        </li>
+                        <li>
+                            <a href="#link" class="header-block__link">Руc</a>
+                        </li>
+                    </ul>
                 </div>
             </HeaderComponent>
         )
@@ -37,18 +37,83 @@ export default Header;
 
 //Header Container
 const HeaderComponent = styled.div`
+
+    .header-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    .header-block__link {
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+        color: var(--main-font-color-white);
+        position: relative;
+        transition: color .3s;
+    }
+    .header-block-first-nav .header-block__link::before {    
+        content: '';
+        position: absolute;
+        bottom: -2.1rem;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #FF5656;
+        transform: scaleX(0);
+        transition: transform .3s;
+    }
+    .header-block__link:hover {
+        color:#fff;
+    }
+    .header-block-first-nav .header-block__link:hover {
+        color: #FF5656;
+    }
+    
+    .header-block-first-nav .header-block__link:hover::before {
+        transform: scaleX(1);
+    }
+    .header-block-first-nav li {
+        margin-right: 2.4rem;
+    }
+    .header-block-first-nav li:last-child {
+        margin-right: 0;
+    }
+    .header-block__nav{
+        display: flex;
+        align-items: center;
+        list-style: none;
+    }
+    .header-block__nav li {
+        margin-top: 1.1rem;
+    }
+    .header-block__nav:first-child li {
+        margin-right: 2.4rem;
+    }
+    .header-block-first-nav li {
+        margin-right: 2.4rem;
+    }
+    .header-block-first-nav li:last-child {
+        margin-right: 0;
+    }
+    .header-block .header-block__nav:last-child li {
+        margin-right: 4rem;
+    }
+    
+    .header-block .header-block__nav:last-child li:last-child {
+        margin-right: 0;
+    }
     .logo{
         position: absolute;
         width: 120px;
         height: 49px;
-        left: 200px;
+        left: 120px;
         top: 8px;
     }
     .rectangle{
         position: absolute;
         width: 136px;
         height: 32px;
-        left: 384px;
+        left: 300px;
         top: 16px;
         /* Reds/Brand red */
 
@@ -73,19 +138,15 @@ const HeaderComponent = styled.div`
     .navigation{
         position: absolute;
         height: 41px;
-        left: 568px;
-        top: 0px;
+        left: 420px;
+        top: -28px;
         padding: 24px; 
 
-    }
-    .navigationText{
-        display: inline-block;
         font-family: Open Sans;
         font-style: normal;
         font-weight: bold;
         font-size: 13px;
         line-height: 18px;
-        /* identical to box height */
         color: #FFFFFF;
     }
     .login{
